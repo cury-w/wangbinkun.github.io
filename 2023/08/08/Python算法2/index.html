@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>开篇 | Hexo</title>
-  <meta name="keywords" content="">
-  <meta name="description" content="开篇 | Hexo">
+  <title>Python算法2 | Hexo</title>
+  <meta name="keywords" content=" 算法 ">
+  <meta name="description" content="Python算法2 | Hexo">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta property="og:type" content="website">
 <meta property="og:title" content="about">
@@ -453,19 +453,34 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-开篇" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-Python算法2" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">开篇</h1>
+        <h1 class="article-title">Python算法2</h1>
     
     <div class="article-meta">
         
         
         
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="Python">Python</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            <i class="iconfont icon-tag"></i>
+            
+            <a class="color3">算法</a>
+            
+        </span>
         
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2023-08-01 16:40:56'>2023-08-01 15:42</time>
+            Created At : <time class="date" title='Updated At: 2023-08-08 16:53:09'>2023-08-08 16:46</time>
         
     </div>
     <div class="article-meta">
@@ -487,7 +502,7 @@
     
     <div class="toc-ref">
     
-        
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B8%A9%E5%BA%A6%E8%BD%AC%E6%8D%A2"><span class="toc-text">#温度转换</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -503,7 +518,17 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h2 id="温度转换"><a href="#温度转换" class="headerlink" title="#温度转换"></a>#温度转换</h2><p>##给你一个四舍五入到两位小数的非负浮点数 celsius 来表示温度，以 摄氏度（Celsius）为单位。<br>你需要将摄氏度转换为 开氏度（Kelvin）和 华氏度（Fahrenheit），并以数组 ans &#x3D; [kelvin, fahrenheit] 的形式返回结果。<br>返回数组 ans 。与实际答案误差不超过 10-5 的会视为正确答案。<br><strong>注意</strong></p>
+<ul>
+<li>开氏度 &#x3D; 摄氏度 + 273.15</li>
+<li>华氏度 &#x3D; 摄氏度 * 1.80 + 32.00</li>
+</ul>
+<p>###示例1：<br><br>输入：celsius &#x3D; 36.50<br><br>输出：[309.65000,97.70000]<br><br>解释：36.50 摄氏度：转换为开氏度是 309.65 ，转换为华氏度是 97.70 。<br>###示例2：<br><br>输入：celsius &#x3D; 122.11<br><br>输出：[395.26000,251.79800]<br><br>解释：122.11 摄氏度：转换为开氏度是 395.26 ，转换为华氏度是 251.798 。<br>###提示：</p>
+<ul>
+<li>0 &lt;&#x3D; celsius &lt;&#x3D; 1000</li>
+</ul>
+<p>###解题：<br><code>class Solution:</code><br><br>&nbsp;&nbsp;<code>def convertTemperature(self, celsius: float) -&gt; List[float]:</code><br><br>&nbsp;&nbsp;&nbsp;&nbsp;<code>Kelvin = celsius + 273.15</code><br><br>&nbsp;&nbsp;&nbsp;&nbsp;<code>Fahrenheit = celsius * 1.80 + 32.00</code><br><br>&nbsp;&nbsp;&nbsp;&nbsp;<code>return [Kelvin,Fahrenheit]</code><br><br>###题解<br>温度转换，利用好公式即可</p>
+
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1050053641@qq.com </span>
     </div>
