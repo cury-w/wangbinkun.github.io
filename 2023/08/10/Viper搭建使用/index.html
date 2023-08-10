@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Viper搭建使用 | Hexo</title>
+  <meta name="keywords" content=" RT工具 , 内网渗透 ">
+  <meta name="description" content="Viper搭建使用 | Hexo">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta property="og:type" content="website">
+<meta property="og:title" content="about">
+<meta property="og:url" content="https://wangred.top/about/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-08-01T08:29:01.000Z">
+<meta property="article:modified_time" content="2023-08-01T08:29:01.065Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="icon" href="/img/avatar.jpg">
+
+<link href="/css/style.css?v=1.1.0" rel="stylesheet">
+
+<link href="/css/hl_theme/darcula.css?v=1.1.0" rel="stylesheet">
+
+<link href="//cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" rel="stylesheet">
+
+<script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="/js/titleTip.js?v=1.1.0" ></script>
+
+<script src="//cdn.jsdelivr.net/npm/highlightjs@9.16.2/highlight.pack.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/jquery.cookie@1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.1.0" ></script>
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="">
+  <input class="theme_blog_path" value="">
+  <input id="theme_shortcut" value="true" />
+  <input id="theme_highlight_on" value="true" />
+  <input id="theme_code_copy" value="true" />
+</div>
+
+
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/"
+   class="avatar_target">
+    <img class="avatar"
+         src="/img/avatar.jpg"/>
+</a>
+<div class="author">
+    <span>John Doe</span>
+</div>
+
+<div class="icon">
+    
+        
+            <a title="github"
+               href="https://github.com/wangbinkun"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-github"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="email"
+               href="mailto:1050053641@qq.com"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-email"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="qq"
+               href="http://wpa.qq.com/msgrd?v=3&uin=1050053641&site=qq&menu=yes"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-qq"></use>
+                    </svg>
+                
+            </a>
+        
+    
+</div>
+
+
+
+
+
+<ul>
+    <li>
+        <div class="all active" data-rel="All">All
+            
+                <small>(12)</small>
+            
+        </div>
+    </li>
+    
+        
+            
+                
+    <li>
+        <div data-rel="Python">
+            
+            Python
+            <small>(2)</small>
+        </div>
+        
+    </li>
+
+            
+        
+    
+        
+            
+                
+    <li>
+        <div data-rel="RT">
+            
+            RT
+            <small>(2)</small>
+        </div>
+        
+    </li>
+
+            
+        
+    
+        
+            
+                
+    <li>
+        <div data-rel="免杀">
+            
+            免杀
+            <small>(1)</small>
+        </div>
+        
+    </li>
+
+            
+        
+    
+        
+            
+                
+    <li>
+        <div data-rel="vulhub">
+            <i class="fold iconfont icon-right"></i>
+            vulhub
+            <small>(1)</small>
+        </div>
+        
+            <ul class="sub hide">
+                
+                    
+    <li>
+        <div data-rel="vulhub&lt;---&gt;rce">
+            
+            rce
+            <small>(1)</small>
+        </div>
+        
+    </li>
+
+                
+            </ul>
+        
+    </li>
+
+            
+        
+    
+        
+            
+                
+    <li>
+        <div data-rel="优秀项目">
+            
+            优秀项目
+            <small>(2)</small>
+        </div>
+        
+    </li>
+
+            
+        
+    
+        
+            
+                
+    <li>
+        <div data-rel="运维">
+            
+            运维
+            <small>(1)</small>
+        </div>
+        
+    </li>
+
+            
+        
+    
+        
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+        
+            
+            
+            
+    </div>
+    <div>
+        
+            <a class="about  hasFriend  site_url"
+               
+               href="/about">About</a>
+        
+        <a style="width: 50%"
+                
+                                           class="friends">Friends</a>
+        
+    </div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="12">
+
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        Links
+        <i class="iconfont icon-left"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <div class="right-top">
+        <div id="default-panel">
+            <i class="iconfont icon-search" data-title="搜索 快捷键 i"></i>
+            <div class="right-title">All</div>
+            <i class="iconfont icon-file-tree" data-title="切换到大纲视图 快捷键 w"></i>
+        </div>
+        <div id="search-panel">
+            <i class="iconfont icon-left" data-title="返回"></i>
+            <input id="local-search-input" autocomplete="off"/>
+            <label class="border-line" for="input"></label>
+            <i class="iconfont icon-case-sensitive" data-title="大小写敏感"></i>
+            <i class="iconfont icon-tag" data-title="标签"></i>
+        </div>
+        <div id="outline-panel" style="display: none">
+            <div class="right-title">大纲</div>
+            <i class="iconfont icon-list" data-title="切换到文章列表"></i>
+        </div>
+    </div>
+
+    <div class="tags-list">
+    <input id="tag-search" />
+    <div class="tag-wrapper">
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>漏洞</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>漏洞复现</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>免杀</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>内网渗透</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>算法</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>优秀项目</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>运维</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Import-ac90</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>redteam</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>RT工具</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>vulhub</a>
+            </li>
+        
+    </div>
+
+</div>
+
+    
+    <nav id="title-list-nav">
+        
+        
+        <a  class="All 优秀项目 "
+           href="/2023/08/10/Viper%E6%90%AD%E5%BB%BA%E4%BD%BF%E7%94%A8/"
+           data-tag="RT工具,内网渗透"
+           data-author="" >
+            <span class="post-title" title="Viper搭建使用">Viper搭建使用</span>
+            <span class="post-date" title="2023-08-10 10:30:35">2023/08/10</span>
+        </a>
+        
+        
+        <a  class="All Python "
+           href="/2023/08/08/Python%E7%AE%97%E6%B3%952/"
+           data-tag="算法"
+           data-author="" >
+            <span class="post-title" title="Python算法2">Python算法2</span>
+            <span class="post-date" title="2023-08-08 16:46:12">2023/08/08</span>
+        </a>
+        
+        
+        <a  class="All Python "
+           href="/2023/08/04/Python%E7%AE%97%E6%B3%951/"
+           data-tag="算法"
+           data-author="" >
+            <span class="post-title" title="Python算法1">Python算法1</span>
+            <span class="post-date" title="2023-08-04 15:20:51">2023/08/04</span>
+        </a>
+        
+        
+        <a  class="All RT "
+           href="/2023/08/04/Smartbi%E5%86%85%E7%BD%AE%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95%E7%BB%95%E8%BF%87%E6%BC%8F%E6%B4%9E/"
+           data-tag="漏洞复现"
+           data-author="" >
+            <span class="post-title" title="Smartbi内置用户登录绕过漏洞">Smartbi内置用户登录绕过漏洞</span>
+            <span class="post-date" title="2023-08-04 10:49:28">2023/08/04</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2023/08/01/first/"
+           data-tag="Import-ac90"
+           data-author="" >
+            <span class="post-title" title="first">first</span>
+            <span class="post-date" title="2023-08-01 17:50:55">2023/08/01</span>
+        </a>
+        
+        
+        <a  class="All 运维 "
+           href="/2023/08/01/%E8%BF%90%E7%BB%B4/"
+           data-tag="运维"
+           data-author="" >
+            <span class="post-title" title="运维">运维</span>
+            <span class="post-date" title="2023-08-01 17:04:14">2023/08/01</span>
+        </a>
+        
+        
+        <a  class="All 优秀项目 "
+           href="/2023/08/01/%E4%BC%98%E7%A7%80%E9%A1%B9%E7%9B%AE/"
+           data-tag="优秀项目"
+           data-author="" >
+            <span class="post-title" title="优秀项目">优秀项目</span>
+            <span class="post-date" title="2023-08-01 17:04:08">2023/08/01</span>
+        </a>
+        
+        
+        <a  class="All vulhub rce "
+           href="/2023/08/01/vulhub/"
+           data-tag="漏洞,vulhub"
+           data-author="" >
+            <span class="post-title" title="vulhub">vulhub</span>
+            <span class="post-date" title="2023-08-01 17:03:45">2023/08/01</span>
+        </a>
+        
+        
+        <a  class="All 免杀 "
+           href="/2023/08/01/%E5%85%8D%E6%9D%80/"
+           data-tag="免杀"
+           data-author="" >
+            <span class="post-title" title="免杀">免杀</span>
+            <span class="post-date" title="2023-08-01 17:03:04">2023/08/01</span>
+        </a>
+        
+        
+        <a  class="All RT "
+           href="/2023/08/01/RT/"
+           data-tag="redteam"
+           data-author="" >
+            <span class="post-title" title="RT">RT</span>
+            <span class="post-date" title="2023-08-01 17:01:23">2023/08/01</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2023/08/01/%E5%BC%80%E7%AF%87/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="开篇">开篇</span>
+            <span class="post-date" title="2023-08-01 15:42:37">2023/08/01</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2023/08/01/hello-world/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Hello World">Hello World</span>
+            <span class="post-date" title="2023-08-01 15:41:18">2023/08/01</span>
+        </a>
+        
+        <div id="no-item-tips">
+
+        </div>
+    </nav>
+    <div id="outline-list">
+    </div>
+</div>
+
+    </div>
+    <div class="hide-list">
+        <div class="semicircle" data-title="切换全屏 快捷键 s">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div id="post">
+    <div class="pjax">
+        <article id="post-Viper搭建使用" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">Viper搭建使用</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="优秀项目">优秀项目</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            <i class="iconfont icon-tag"></i>
+            
+            <a class="color5">RT工具</a>
+            
+            <a class="color5">内网渗透</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+            Created At : <time class="date" title='Updated At: 2023-08-10 11:52:05'>2023-08-10 10:30</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        
+        <span id="busuanzi_container_page_pv">
+            Views 👀 :<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Viper%E4%BB%8B%E7%BB%8D"><span class="toc-text">Viper介绍</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E5%AE%89%E8%A3%85%E8%AF%B4%E6%98%8E"><span class="toc-text">一、安装说明</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E9%A6%96%E6%AC%A1%E5%AE%89%E8%A3%85"><span class="toc-text">1.首次安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E6%89%8B%E5%8A%A8%E5%AE%89%E8%A3%85"><span class="toc-text">2.手动安装</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1%E5%88%87%E6%8D%A2%E5%88%B0root%E7%94%A8%E6%88%B7-%E7%A1%AE%E8%AE%A4%E4%BB%A5%E4%B8%8B%E6%93%8D%E4%BD%9C%E9%83%BD%E5%9C%A8root%E7%94%A8%E6%88%B7%E4%B8%8B%E6%93%8D%E4%BD%9C"><span class="toc-text">2.1切换到root用户,确认以下操作都在root用户下操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2%E5%AE%89%E8%A3%85docker"><span class="toc-text">2.2安装docker</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3%E8%AE%BE%E7%BD%AE-%E7%94%9F%E6%88%90-%E8%BF%9B%E5%85%A5%E5%AE%89%E8%A3%85%E7%9B%AE%E5%BD%95"><span class="toc-text">2.3设置&#x2F;生成&#x2F;进入安装目录</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-4%E7%94%9F%E6%88%90docker-compose-yml"><span class="toc-text">2.4生成docker-compose.yml</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-5%E8%AE%BE%E7%BD%AE%E7%99%BB%E5%BD%95%E5%AF%86%E7%A0%81"><span class="toc-text">2.5设置登录密码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-6%E5%86%99%E5%85%A5%E5%AF%86%E7%A0%81%E5%88%B0docker-compose-yml"><span class="toc-text">2.6写入密码到docker-compose.yml</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-7%E5%90%AF%E5%8A%A8Viper"><span class="toc-text">2.7启动Viper</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%8F%8D%E6%BA%AF%E6%BA%90"><span class="toc-text">二、反溯源</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E6%93%8D%E4%BD%9C"><span class="toc-text">1.操作</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E7%89%88%E6%9C%AC%E6%9B%B4%E6%96%B0"><span class="toc-text">三、版本更新</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%B0%8F%E7%89%88%E6%9C%AC%E6%9B%B4%E6%96%B0"><span class="toc-text">1.小版本更新</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E8%B7%A8%E7%89%88%E6%9C%AC%E6%9B%B4%E6%96%B0-%E4%BE%8B%E5%A6%821-2-6%E6%9B%B4%E6%96%B0%E5%88%B01-3-0"><span class="toc-text">2.跨版本更新(例如1.2.6更新到1.3.0)</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E4%BF%AE%E6%94%B9%E5%AF%86%E7%A0%81"><span class="toc-text">四、修改密码</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E4%B8%B4%E6%97%B6%E4%BF%AE%E6%94%B9"><span class="toc-text">1.临时修改</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E6%8C%81%E4%B9%85%E5%8C%96%E4%BF%AE%E6%94%B9"><span class="toc-text">2.持久化修改</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%94%E3%80%81%E5%85%B3%E9%97%AD-%E9%87%8D%E5%90%AF"><span class="toc-text">五、关闭&#x2F;重启</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%AD%E3%80%81%E5%AE%89%E8%A3%85%E7%9B%AE%E5%BD%95%E4%BB%8B%E7%BB%8D"><span class="toc-text">六、安装目录介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E2%97%8F-db%E7%9B%AE%E5%BD%95"><span class="toc-text">● db目录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E2%97%8F-log%E7%9B%AE%E5%BD%95"><span class="toc-text">● log目录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E2%97%8F-loot%E7%9B%AE%E5%BD%95"><span class="toc-text">● loot目录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E2%97%8F-module%E7%9B%AE%E5%BD%95"><span class="toc-text">● module目录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E2%97%8F-nginxconfig%E7%9B%AE%E5%BD%95"><span class="toc-text">● nginxconfig目录</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%83%E3%80%81%E5%AE%89%E8%A3%85%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB"><span class="toc-text">七、安装问题汇总</span></a>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Viper介绍"><a href="#Viper介绍" class="headerlink" title="Viper介绍"></a>Viper介绍</h2><p><strong>前言</strong>：Viper是一款图形化内网渗透工具,将内网渗透过程中常用的战术及技术进行模块化及武器化.</p>
+<p>· Viper基础功能已集成杀软绕过,内网隧道,文件管理,增强命令行等基础功能.</p>
+<p>· Viper通过模块的方式落地MITRE ATT&amp;CK中的常用技术.当前已集成55个模块,覆盖初始访问&#x2F;持久化&#x2F;权限提升&#x2F;防御绕过&#x2F;凭证访问&#x2F;信息收集&#x2F;横向移动等大类.</p>
+<p>· Viper可以帮助你以直观&#x2F;可视化的方式使用metasploit-framework.</p>
+<p>· 项目地址: <a target="_blank" rel="noopener" href="https://github.com/FunnyWolf/Viper">https://github.com/FunnyWolf/Viper</a>  <br></p>
+<h1 id="一、安装说明"><a href="#一、安装说明" class="headerlink" title="一、安装说明"></a>一、安装说明</h1><p>（参考星链计划<a target="_blank" rel="noopener" href="https://github.com/knownsec/404StarLink" title="星链计划">https://github.com/knownsec/404StarLink</a>）<br></p>
+<h2 id="1-首次安装"><a href="#1-首次安装" class="headerlink" title="1.首次安装"></a>1.首次安装</h2><p>f8x工具支持在linux一键部署Viper<br></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sysctl -w vm.max_map_count=262144 </span><br><span class="line">ulimit -n 65535</span><br><span class="line">curl -o f8x https://f8x.io/   # wget -O f8x https://f8x.io/</span><br><span class="line">bash f8x -viper</span><br></pre></td></tr></table></figure>
+<p>红队环境需配置反溯源！</p>
+<h2 id="2-手动安装"><a href="#2-手动安装" class="headerlink" title="2.手动安装"></a>2.手动安装</h2><ul>
+<li>linux 系统VPS或虚拟机</li>
+<li>虚拟机内存大于2G</li>
+</ul>
+<h3 id="2-1切换到root用户-确认以下操作都在root用户下操作"><a href="#2-1切换到root用户-确认以下操作都在root用户下操作" class="headerlink" title="2.1切换到root用户,确认以下操作都在root用户下操作"></a>2.1切换到root用户,确认以下操作都在root用户下操作</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">su root</span><br><span class="line">sysctl -w vm.max_map_count=262144</span><br><span class="line">ulimit -n 65535</span><br></pre></td></tr></table></figure>
+<p>使用sudo可能会出现未知错误!<br></p>
+<h3 id="2-2安装docker"><a href="#2-2安装docker" class="headerlink" title="2.2安装docker"></a>2.2安装docker</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">curl -fsSL https://get.docker.com | bash -s docker --mirror Aliyun</span><br><span class="line">service docker start</span><br></pre></td></tr></table></figure>
+<p><strong>docker镜像加速（建议添加）</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">sudo mkdir -p /etc/docker</span><br><span class="line">sudo tee /etc/docker/daemon.json &lt;&lt;-&#x27;EOF&#x27;</span><br><span class="line">&#123;</span><br><span class="line">  &quot;registry-mirrors&quot;: [&quot;https://0hoa1002.mirror.aliyuncs.com&quot;]</span><br><span class="line">&#125;</span><br><span class="line">EOF</span><br><span class="line">sudo systemctl daemon-reload</span><br><span class="line">sudo systemctl restart docker</span><br></pre></td></tr></table></figure>
+<h3 id="2-3设置-生成-进入安装目录"><a href="#2-3设置-生成-进入安装目录" class="headerlink" title="2.3设置&#x2F;生成&#x2F;进入安装目录"></a>2.3设置&#x2F;生成&#x2F;进入安装目录</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">export VIPER_DIR=/root/VIPER</span><br><span class="line">mkdir -p $VIPER_DIR &amp;&amp; cd $VIPER_DIR</span><br></pre></td></tr></table></figure>
+<h3 id="2-4生成docker-compose-yml"><a href="#2-4生成docker-compose-yml" class="headerlink" title="2.4生成docker-compose.yml"></a>2.4生成docker-compose.yml</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">tee docker-compose.yml &lt;&lt;-&#x27;EOF&#x27;</span><br><span class="line">version: &quot;3&quot;</span><br><span class="line">services:</span><br><span class="line">  viper:</span><br><span class="line">    image: registry.cn-shenzhen.aliyuncs.com/toys/viper:latest</span><br><span class="line">    container_name: viper-c</span><br><span class="line">    network_mode: &quot;host&quot;</span><br><span class="line">    restart: always</span><br><span class="line">    volumes:</span><br><span class="line">      - $&#123;PWD&#125;/loot:/root/.msf4/loot</span><br><span class="line">      - $&#123;PWD&#125;/db:/root/viper/Docker/db</span><br><span class="line">      - $&#123;PWD&#125;/module:/root/viper/Docker/module</span><br><span class="line">      - $&#123;PWD&#125;/log:/root/viper/Docker/log</span><br><span class="line">      - $&#123;PWD&#125;/nginxconfig:/root/viper/Docker/nginxconfig</span><br><span class="line">    command: [&quot;VIPER_PASSWORD&quot;]</span><br><span class="line">EOF</span><br></pre></td></tr></table></figure>
+<ul>
+<li>国外VPS也可以将registry.cn-shenzhen.aliyuncs.com&#x2F;toys&#x2F;viper:latest替换成<br>registry.cn-hongkong.aliyuncs.com&#x2F;toys&#x2F;viper:latest<br>可以将latest替换为版本号来安装历史版本,最早支持1.5.26,<br>例如 registry.cn-hongkong.aliyuncs.com&#x2F;toys&#x2F;viper:1.5.26</li>
+</ul>
+<h3 id="2-5设置登录密码"><a href="#2-5设置登录密码" class="headerlink" title="2.5设置登录密码"></a>2.5设置登录密码</h3><ul>
+<li>Viper不允许使用默认密码,diypassword替换为自定义密码<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">export VIPER_PASSWORD=diypassword</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="2-6写入密码到docker-compose-yml"><a href="#2-6写入密码到docker-compose-yml" class="headerlink" title="2.6写入密码到docker-compose.yml"></a>2.6写入密码到docker-compose.yml</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sed -i &quot;s/VIPER_PASSWORD/$VIPER_PASSWORD/g&quot; docker-compose.yml</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-7启动Viper"><a href="#2-7启动Viper" class="headerlink" title="2.7启动Viper"></a>2.7启动Viper</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd $VIPER_DIR</span><br><span class="line"></span><br><span class="line">docker compose up -d</span><br></pre></td></tr></table></figure>
+<ul>
+<li>所有的docker compose命令必须在安装目录执行才会有效果</li>
+<li>等待15s系统启动,访问 <a target="_blank" rel="noopener" href="https://yourvpsip:60000/">https://yourvpsip:60000</a> 登录. 用户名:root 密码:自定义密码</li>
+<li>如果你使用VPS部署Viper,请确认VPS的防火墙开放了60000端口及后续监听需要的端口</li>
+</ul>
+<h1 id="二、反溯源"><a href="#二、反溯源" class="headerlink" title="二、反溯源"></a>二、反溯源</h1><p><strong>说明</strong></p>
+<ul>
+<li>威胁情报厂商会扫描60000并将安装VIPER的服务器标注为C2</li>
+<li>配置完成反溯源后: </li>
+<li><ul>
+<li>防守方无法人工确认VPS是否安装了VIPER</li>
+</ul>
+</li>
+<li><ul>
+<li>威胁情报平台无法识别VIPER标签</li>
+</ul>
+</li>
+</ul>
+<h2 id="1-操作"><a href="#1-操作" class="headerlink" title="1.操作"></a>1.操作</h2><ul>
+<li>安装Viper并启动</li>
+<li><a href="https://yourvpsip:60000登录Viper确认无异常">https://yourvpsip:60000登录Viper确认无异常</a></li>
+<li>登录Viper所在的服务器执行如下命令<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">cd /root/VIPER/nginxconfig    # /root/VIPER为viper安装目录</span><br><span class="line"></span><br><span class="line">chmod 755 nobody.sh</span><br><span class="line"></span><br><span class="line">./nobody.sh                  # 按照提示运行,牢记密码</span><br></pre></td></tr></table></figure>
+<img src="/2023/08/10/Viper%E6%90%AD%E5%BB%BA%E4%BD%BF%E7%94%A8/%E5%8F%8D%E6%BA%AF%E6%BA%901.png" class="" title="Viper"><br></li>
+<li>访问 <a href="https://yourvpsip:newport">https://yourvpsip:newport</a> 登录.</li>
+<li>用户名: root  密码:自定义密码<img src="/2023/08/10/Viper%E6%90%AD%E5%BB%BA%E4%BD%BF%E7%94%A8/%E5%8F%8D%E6%BA%AF%E6%BA%902.png" class="" title="Viper"><br></li>
+<li>用户名: root  密码:自定义密码<img src="/2023/08/10/Viper%E6%90%AD%E5%BB%BA%E4%BD%BF%E7%94%A8/%E5%8F%8D%E6%BA%AF%E6%BA%903.png" class="" title="Viper"><br></li>
+<li>页面认证密码和登录VIPER的密码相互独立,可以相同也可以不同</li>
+</ul>
+<h1 id="三、版本更新"><a href="#三、版本更新" class="headerlink" title="三、版本更新"></a>三、版本更新</h1><h2 id="1-小版本更新"><a href="#1-小版本更新" class="headerlink" title="1.小版本更新"></a>1.小版本更新</h2><ul>
+<li><p>删除原有容器</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd /root/VIPER              # viper安装目录</span><br><span class="line">docker compose down         # 删除现有容器</span><br></pre></td></tr></table></figure></li>
+<li><p>更新docker镜像</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker compose pull</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>新建并启动容器</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker compose up -d</span><br></pre></td></tr></table></figure></li>
+<li><p>访问  <a href="https://vpsip:diyport">https://vpsip:diyport</a> 登录服务器.用户名:root 密码:自定义密码</p>
+</li>
+<li><p>密码可以通过 cat &#x2F;root&#x2F;VIPER&#x2F;docker-compose.yml 查看</p>
+</li>
+<li><p>diyport可通过 cat &#x2F;root&#x2F;VIPER&#x2F;nginxconfig&#x2F;viper.conf 查看</p>
+</li>
+</ul>
+<h2 id="2-跨版本更新-例如1-2-6更新到1-3-0"><a href="#2-跨版本更新-例如1-2-6更新到1-3-0" class="headerlink" title="2.跨版本更新(例如1.2.6更新到1.3.0)"></a>2.跨版本更新(例如1.2.6更新到1.3.0)</h2><ul>
+<li><p>docker compose所有命令在&#x2F;root&#x2F;VIPER目录执行</p>
+</li>
+<li><p>Viper高版本不兼容低版本已有数据,跨版本更新需要清空已有数据<br></p>
+<br></li>
+<li><p>删除原有容器</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd /root/VIPER # viper安装目录</span><br><span class="line">docker compose down</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>清空已有数据及自定义模块</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rm -f ./db/*</span><br><span class="line">rm -f ./module/*</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>更新 docker 镜像</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker compose pull</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>新建并启动容器</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker compose up -d</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>访问  <a href="https://vpsip:diyport">https://vpsip:diyport</a> 登录服务器.用户名:root 密码:自定义密码</p>
+</li>
+<li><p>密码可以通过 cat &#x2F;root&#x2F;VIPER&#x2F;docker-compose.yml 查看</p>
+</li>
+<li><p>diyport可通过 cat &#x2F;root&#x2F;VIPER&#x2F;nginxconfig&#x2F;viper.conf 查看</p>
+</li>
+</ul>
+<h1 id="四、修改密码"><a href="#四、修改密码" class="headerlink" title="四、修改密码"></a>四、修改密码</h1><h2 id="1-临时修改"><a href="#1-临时修改" class="headerlink" title="1.临时修改"></a>1.临时修改</h2><ul>
+<li>适用于需要在不重启Viper的情况下修改密码,Viper更新后密码不会保留</li>
+<li>确保Viper处于正常运行状态<br><br></li>
+<li>进入Docker镜像命令行<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker exec -it viper-c bash</span><br></pre></td></tr></table></figure></li>
+<li>执行修改密码命令</li>
+<li>Viper不允许使用默认密码,diypassword替换为自定义密码密码且大于8位<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">viper -pw diypassword</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="2-持久化修改"><a href="#2-持久化修改" class="headerlink" title="2.持久化修改"></a>2.持久化修改</h2><ul>
+<li><p>进入安装目录</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd /root/VIPER</span><br></pre></td></tr></table></figure></li>
+<li><p>Viper不允许使用默认密码,diypassword替换为自定义密码密码且大于8位</p>
+</li>
+<li><p>更改docker-compose.yml中command内容为新密码，例如</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">version: &quot;3&quot;</span><br><span class="line">services:</span><br><span class="line">  viper:</span><br><span class="line">    image: registry.cn-hongkong.aliyuncs.com/toys/viper:latest</span><br><span class="line">    container_name: viper-c</span><br><span class="line">    network_mode: &quot;host&quot;</span><br><span class="line">    restart: always</span><br><span class="line">    volumes:</span><br><span class="line">      - $&#123;PWD&#125;/loot:/root/.msf4/loot</span><br><span class="line">      - $&#123;PWD&#125;/db:/root/viper/Docker/db</span><br><span class="line">      - $&#123;PWD&#125;/module:/root/viper/Docker/module</span><br><span class="line">      - $&#123;PWD&#125;/log:/root/viper/Docker/log</span><br><span class="line">      - $&#123;PWD&#125;/nginxconfig:/root/viper/Docker/nginxconfig</span><br><span class="line">    command: [&quot;zhe_shi_xin_mi_ma&quot;]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>执行如下命令重新建立容器</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd /root/VIPER</span><br><span class="line">docker compose down       # 删除现有容器</span><br><span class="line">docker compose up -d      # 重启启动容器</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h1 id="五、关闭-重启"><a href="#五、关闭-重启" class="headerlink" title="五、关闭&#x2F;重启"></a>五、关闭&#x2F;重启</h1><ul>
+<li>临时关闭Viper<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd /root/VIPER</span><br><span class="line">docker-compose stop</span><br></pre></td></tr></table></figure></li>
+<li>重新启动Viper<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd /root/VIPER</span><br><span class="line">docker-compose start</span><br></pre></td></tr></table></figure></li>
+<li>查看容器日志<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker logs viper-c</span><br></pre></td></tr></table></figure></li>
+<li>进入容器命令行<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker exec -it viper-c bash</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h1 id="六、安装目录介绍"><a href="#六、安装目录介绍" class="headerlink" title="六、安装目录介绍"></a>六、安装目录介绍</h1><ul>
+<li>Viper通过docker挂载目录的方式持久化保存数据,安装完成后典型的目录如下图:<br><img src="/2023/08/10/Viper%E6%90%AD%E5%BB%BA%E4%BD%BF%E7%94%A8/%E7%9B%AE%E5%BD%95.png" class="" title="Viper"><br></li>
+</ul>
+<h2 id="●-db目录"><a href="#●-db目录" class="headerlink" title="● db目录"></a>● db目录</h2><p>db.sqlite3 是Viper的SQL数据库文件<br><br>dump.rdb 是Viper缓存数据库文件<br></p>
+<h2 id="●-log目录"><a href="#●-log目录" class="headerlink" title="● log目录"></a>● log目录</h2><p>access.log nginx访问日志<br><br>error.log nginx错误日志<br><br>daphne.log viperpython websocket运行日志<br><br>uwsgi.log viperpython http服务运行日志<br><br>viperpython.log vipepython 主服务运行日志<br><br>puma.log msf接口服务日志<br></p>
+<h2 id="●-loot目录"><a href="#●-loot目录" class="headerlink" title="● loot目录"></a>● loot目录</h2><p>存放用户下载&#x2F;上传的文件<br></p>
+<h2 id="●-module目录"><a href="#●-module目录" class="headerlink" title="● module目录"></a>● module目录</h2><p>存放自定义模块</p>
+<h2 id="●-nginxconfig目录"><a href="#●-nginxconfig目录" class="headerlink" title="● nginxconfig目录"></a>● nginxconfig目录</h2><p>nobody.sh 用于进行反溯源配置<br><br>viper.conf nginx子配置文件,用户可通过该配置文件自定义nginx配置<br></p>
+<h1 id="七、安装问题汇总"><a href="#七、安装问题汇总" class="headerlink" title="七、安装问题汇总"></a>七、安装问题汇总</h1><ul>
+<li>Mac安装Viper</li>
+<li>Mac本身Docker不支持network_mode:”host”,所以不建议Mac原生安装Viper</li>
+<li>安装流程与在Linux上安装相同,其中docker-compose.yml使用如下脚本生成<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">tee docker-compose.yml &lt;&lt;-&#x27;EOF&#x27;</span><br><span class="line">version: &quot;3&quot;</span><br><span class="line">services:</span><br><span class="line">  viper:</span><br><span class="line">    image: registry.cn-shenzhen.aliyuncs.com/toys/viper:latest</span><br><span class="line">    container_name: viper-c</span><br><span class="line">    ports:</span><br><span class="line">      - &quot;59990-60000:59990-60000&quot;</span><br><span class="line">    restart: always</span><br><span class="line">    volumes:</span><br><span class="line">      - $&#123;PWD&#125;/loot:/root/.msf4/loot</span><br><span class="line">      - $&#123;PWD&#125;/db:/root/viper/Docker/db</span><br><span class="line">      - $&#123;PWD&#125;/module:/root/viper/Docker/module</span><br><span class="line">      - $&#123;PWD&#125;/log:/root/viper/Docker/log</span><br><span class="line">      - $&#123;PWD&#125;/nginxconfig:/root/viper/Docker/nginxconfig</span><br><span class="line">    command: [&quot;VIPER_PASSWORD&quot;]</span><br><span class="line">EOF</span><br></pre></td></tr></table></figure></li>
+<li><strong>请注意,使用如上脚本启动的Viper,监听只能使用59990-59999这9个端口.</strong></li>
+<li><strong>虚拟内存配置</strong></li>
+<li><strong>如果 VPS 内存小于 2G,需要增加 2G 虚拟内存.</strong></li>
+<li><a target="_blank" rel="noopener" href="https://www.shuzhiduo.com/A/ke5j7Loodr/">https://www.shuzhiduo.com/A/ke5j7Loodr/</a><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">dd if=/dev/zero of=/root/swapfile2 bs=1M count=2048</span><br><span class="line">chmod 0600 /root/swapfile2</span><br><span class="line">mkswap /root/swapfile2</span><br><span class="line">swapon /root/swapfile2</span><br><span class="line">sysctl vm.swappiness=60</span><br><span class="line">echo &#x27;/root/swapfile2  swap  swap  defaults&#x27; &gt;&gt; /etc/fstab</span><br></pre></td></tr></table></figure></li>
+</ul>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1050053641@qq.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">💰</a>
+</p>
+
+
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">
+    ©2016-2020 Yelog
+</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full" data-title="切换全屏 快捷键 s"><span class="min "></span></button>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+
+<div class="hide_box" onclick="dashangToggle()"></div>
+<div class="shang_box">
+    <a class="shang_close"  onclick="dashangToggle()">×</a>
+    <div class="shang_tit">
+        <p>Help us with donation</p>
+    </div>
+    <div class="shang_payimg">
+        <div class="pay_img">
+            <img src="/img/alipay.jpg" class="alipay" title="扫码支持">
+            <img src="/img/weixin.jpg" class="weixin" title="扫码支持">
+        </div>
+    </div>
+    <div class="shang_payselect">
+        <span><label><input type="radio" name="pay" checked value="alipay">alipay</label></span><span><label><input type="radio" name="pay" value="weixin">weixin</label></span>
+    </div>
+</div>
+
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.1.0" ></script>
+
+<script src="/js/script.js?v=1.1.0" ></script>
+<script>
+    var img_resize = 'default';
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $("#post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+        $("input[name=pay]").on("click", function () {
+            if($("input[name=pay]:checked").val()=="weixin"){
+                $(".shang_box .shang_payimg .pay_img").addClass("weixin_img");
+            } else {
+                $(".shang_box .shang_payimg .pay_img").removeClass("weixin_img");
+            }
+        })
+        
+
+        /*高亮代码块行号*/
+        
+        $('pre code').each(function(){
+            var lines = $(this).text().trim().split('\n').length, widther='';
+            if (lines>99) {
+                widther = 'widther'
+            }
+            var $numbering = $('<ul/>').addClass('pre-numbering ' + widther).attr("unselectable","on");
+            $(this).addClass('has-numbering ' + widther)
+                    .parent()
+                    .append($numbering);
+            for(var i=1;i<=lines;i++){
+                $numbering.append($('<li/>').text(i));
+            }
+        });
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+    function dashangToggle() {
+        $(".shang_box").fadeToggle();
+        $(".hide_box").fadeToggle();
+    }
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<style>
+    pre{
+        position: relative;
+        margin-bottom: 24px;
+        border-radius: 10px;
+        border: 1px solid #e2dede;
+        background: #FFF;
+        overflow: hidden;
+    }
+    code.has-numbering{
+        margin-left: 30px;
+    }
+    code.has-numbering.widther{
+        margin-left: 35px;
+    }
+    .pre-numbering{
+        margin: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 20px;
+        padding: 0.5em 3px 0.7em 5px;
+        border-right: 1px solid #C3CCD0;
+        text-align: right;
+        color: #AAA;
+        background-color: ;
+    }
+    .pre-numbering.widther {
+        width: 35px;
+    }
+</style>
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>
